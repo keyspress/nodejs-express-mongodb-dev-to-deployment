@@ -18,6 +18,10 @@ mongoose
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');
 
+// Load Idea Model
+require('./models/Idea');
+const Idea = mongoose.model('ideas');
+
 // Index route
 app.get('/', (req, res) => {
   const title = 'Welcome';
