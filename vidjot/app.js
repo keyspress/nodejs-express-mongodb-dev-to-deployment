@@ -6,7 +6,7 @@ const flash = require('connect-flash');
 const session = require('express-session');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
-const bcrypt = require('bcryptjs');
+// const bcrypt = require('bcryptjs');
 const passport = require('passport');
 
 const app = express();
@@ -14,6 +14,9 @@ const app = express();
 // Load routes
 const ideas = require('./routes/ideas');
 const users = require('./routes/users');
+
+// Passport Config
+require('./config/passport')(passport);
 
 mongoose.Promise = global.Promise;
 // Connect to mongoose
